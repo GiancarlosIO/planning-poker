@@ -1,0 +1,40 @@
+version: "3"
+services:
+  backend:
+    container_name: 'planning-pocker-backend'
+    build: ./backend
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/backend/node_modules
+    working_dir: /usr/src/app/backend
+    command: npm run dev
+    ports:
+      - 4000:4000
+    depends_on:
+      - db
+    env_file:
+      - planning-poker.env
+  frontend:
+    container_name: 'planning-pocker-frontend'
+    build: ./frontend
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/frontend/node_modules
+    working_dir: /usr/src/app/frontend
+    command: npm run start
+    ports:
+      - 3000:3000
+    env_file:
+      - planning-poker.env
+  db:
+    container_name: 'planning-pocker-postgress'
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - planning-poker.env
+volumes:
+  postgres_data:
+    external: true
