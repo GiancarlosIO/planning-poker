@@ -12,6 +12,7 @@ services:
       - 4000:4000
     depends_on:
       - db
+      - frontend
     env_file:
       - planning-poker.env
   frontend:

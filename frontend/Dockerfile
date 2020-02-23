@@ -26,7 +26,7 @@ COPY --from=builderFrontend /usr/src/app/frontend/node_modules node_modules
 
 COPY . .
 
-EXPOSE 3000
+# EXPOSE 3000
 
 CMD ["npm", "run", "build"]
 
