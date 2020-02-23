@@ -1,5 +1,5 @@
 build:
   docker:
     web: Dockerfile
-# run:
-#   web: npm run start:prod
+run:
+  web: cd backend && npm run start:prod
