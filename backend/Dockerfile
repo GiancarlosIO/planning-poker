@@ -29,7 +29,7 @@ COPY --from=builderBackend /usr/src/app/backend/node_modules node_modules
 
 COPY . .
 
-EXPOSE 4000
+# EXPOSE 4000
 
 CMD ["npm", "run", "start:prod"]
 

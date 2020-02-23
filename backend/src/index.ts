@@ -5,7 +5,7 @@ import express from 'express';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const typeDefs = `
   type Query {
@@ -62,4 +62,4 @@ if (isProduction) {
 
 server.start(serverOptions, ({ port }) => {
   console.log(`> Server is running in http://localhost:${port}`);
-})
+});
