@@ -1,7 +1,6 @@
 build:
   docker:
-    frontend: frontend/Dockerfile
-    web: backend/Dockerfile
+    web: Dockerfile
 run:
   frontend: npm run build
   web: npm run start:prod
