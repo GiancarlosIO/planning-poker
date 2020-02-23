@@ -23,21 +23,20 @@ RUN npm install
 WORKDIR /usr/src/app/frontend
 COPY frontend/package*.json ./
 RUN npm install
-RUN npm run build
 
 # The instructions for second stage
 FROM node:12.16.1-alpine3.9
 
+WORKDIR /usr/src/app/
 # In some articles you will see that people do mkdir /app and then set it as workdir,
 # but this is not best practice. Use a pre-existing folder/usr/src/app that is better suited for this.
 # - setup the frontend -#
-WORKDIR /usr/src/app/frontend
-COPY --from=builder /usr/src/app/frontend/node_modules node_modules
-COPY frontend .
+COPY --from=builder /usr/src/app/frontend/node_modules frontend/node_modules
+COPY frontend ./frontend/
+RUN cd frontend && npm run build
 
-WORKDIR /usr/src/app/backend
-COPY --from=builder /usr/src/app/backend/node_modules node_modules
-COPY backend .
+COPY --from=builder /usr/src/app/backend/node_modules backend/node_modules
+COPY backend ./backend/
 
 # EXPOSE 4000
 

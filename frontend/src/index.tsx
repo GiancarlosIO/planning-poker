@@ -1,3 +1,4 @@
+// https://github.com/theKashey/react-imported-component#readme
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient } from 'apollo-client';
