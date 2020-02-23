@@ -20,23 +20,19 @@
   "javascript",
   "javascriptreact",
   "Babel Javascript",
-  {
-      "language": "typescript",
-      "autoFix": true
-  },
-  {
-      "language": "typescriptreact",
-      "autoFix": true
-  }
+  "typescript"
+  ,"typescriptreact"
 ],
-"eslint.autoFixOnSave": true,
 "eslint.alwaysShowStatus": true,
 
 // typescript auto-format settings
-"typescript.tsdk": "node_modules/typescript/lib",
+"typescript.tsdk": "backend/node_modules/typescript/lib",
 "javascript.preferences.importModuleSpecifier": "auto",
 "typescript.preferences.importModuleSpecifier": "auto",
 "javascript.preferences.quoteStyle": "single",
-"typescript.preferences.quoteStyle": "single"
+"typescript.preferences.quoteStyle": "single",
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
 }
   
