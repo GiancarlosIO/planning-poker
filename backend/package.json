@@ -29,7 +29,7 @@
     "react-dom": "16.12.0"
   },
   "devDependencies": {
-    "aws-lambda": "^0.1.2",
+    "aws-lambda": "^1.0.5",
     "eslint-config-webpack-nexus": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
